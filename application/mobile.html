@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" media="all" href="css/jquery.minicolors.css">
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/farbtastic.js"></script>
+ <script type="text/javascript" src="js/jquery.minicolors.min.js"></script>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>  
+<link rel="stylesheet" href="css/farbtastic.css" type="text/css" />
+ <script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+    //default values
+    $('.logo').css("background-color","#646464");
+    $('.primary-button').css("background-color",'#000000');   
+    $('.secondary-button').css("color",'#646464');
+     $('.primary-button').css("color",'#ffffff');
+     $('.secondary-button').css("color",'#ffffff');
+
+     var curr_id;
+
+    $('#picker').click(function()
+    {
+        var color_val = $.farbtastic('#picker').color;
+        console.log("Hello");
+        console.log(color_val);
+        console.log(curr_id);
+        if(curr_id == "color_page_bk")
+        {
+            $('.page_color').css("background-color",color_val);
+            $(".mobile-inner").css("background-color",color_val);
+        }
+        if(curr_id == "color_pr_btn_txt_color")
+        {
+            $('.primary_btn_text_color').css("background-color",color_val);
+            $('.primary-button').css("color",color_val);
+        }
+        if(curr_id == "color_pr_btn_color")
+        {
+             $('.primary_btn_color').css("background-color",color_val);
+            $('.primary-button').css("background-color",color_val);   
+        }
+         if(curr_id == "color_sr_btn_color")
+        {
+             $('.secondary_btn_color').css("background-color",color_val);
+            $('.secondary-button').css("background-color",color_val);   
+        }
+        if(curr_id == "color_sr_btn_txt_color")
+        {
+            $('.secondary_btn_text_color').css("background-color",color_val);
+            $('.secondary-button').css("color",color_val);
+        }
+        if(curr_id == "color_font_color")
+        {
+            $('.font_color').css("background-color",color_val);
+            $('.font').css("color",color_val);
+        }
+        if(curr_id == "color_header_color")
+        {
+            $('.header_color').css("background-color",color_val);
+            $('.logo').css("background-color",color_val);
+        }
+        
+    });
+    $('.page_color').click(function()
+    {
+        curr_id = this.id;
+        $('#picker').farbtastic('#color');
+    });
+    $('.primary_btn_text_color').click(function()
+    {
+        curr_id = this.id;
+        $('#picker').farbtastic('#color');
+    });
+    $('.primary_btn_color').click(function()
+    {
+        curr_id = this.id;
+        $('#picker').farbtastic('#color');
+    });
+    $('.secondary_btn_color').click(function()
+    {
+        curr_id = this.id;
+        $('#picker').farbtastic('#color');
+    });
+    $('.secondary_btn_text_color').click(function()
+    {
+        curr_id = this.id;
+        $('#picker').farbtastic('#color');
+    });
+     $('.font_color').click(function()
+    {
+        curr_id = this.id;
+        $('#picker').farbtastic('#color');
+    });
+    $('.header_color').click(function()
+    {
+        curr_id = this.id;
+        $('#picker').farbtastic('#color');
+    });
+});
+ </script>
+</head>
+<body class="mobile-panel-page">
+	<div class="wrapper">
+    	<div class="container">
+        	<div class="row">
+            	<div class="col-md-6 col-sm-6 col-xs-12">
+                	<div class="partner-name">
+                    	<h4>PARTNER NAME</h4>
+                        <ul class="partner-main">
+                            <li class="dropdown global-settings">
+                              <input type="checkbox" />
+                              <a href="#" data-toggle="dropdown">Global Settings</a>
+                              <ul class="dropdown-menu">
+                                <li>Page Background<a href="#"  id="color_page_bk" class="page_color" class="colorwell"  data-toggle="modal" data-target="#myModal"></a></li>
+                           
+                                <li>Font Style
+                                	<select>
+                                    	<option>Helvetica</option>
+                                        <option>Arial</option>
+                                        <option>Calibri</option>
+                                        <option>System</option>
+                                        <option>Tahoma</option>
+                                    </select>
+                                </li>
+                                <li>Font Color<a href="#" id="color_font_color" class="font_color" data-toggle="modal" class="colorwell" data-target="#myModal"></a></li>
+                                <li>Header Color<a href="#" id="color_header_color" class="header_color" data-toggle="modal" class="colorwell" data-target="#myModal"></a></li>
+                                <li>Header Logo (500 x 150)<div class="rounded">
+                                    <input type="checkbox" value="None" id="roundedOne" name="check" />
+                                    <label for="roundedOne"></label>
+                                </div>
+                                </li>
+                                <li>Primary Button Color<a href="#" id="color_pr_btn_color" class="primary_btn_color" data-toggle="modal" class="colorwell" data-target="#myModal"></a></li>
+                                <li>Primary Button Text Color<a href="#" id="color_pr_btn_txt_color" class="primary_btn_text_color" data-toggle="modal" class="colorwell" data-target="#myModal"></a></li>
+                                <li>Secondary Button Color<a href="#" id="color_sr_btn_color" class="secondary_btn_color" data-toggle="modal" class="colorwell" data-target="#myModal"></a></li>
+                                <li>Secondary Button Text Color<a href="#" id="color_sr_btn_txt_color" class="secondary_btn_text_color" data-toggle="modal" class="colorwell" data-target="#myModal"></a></li>
+                                <li>Navigation Color<a href="#"></a></li>
+                              </ul>
+                            </li>
+                            <li class="dropdown intro">
+                              <input type="checkbox" />
+                              <a href="#" data-toggle="dropdown">Intro</a>
+                              <ul class="dropdown-menu">
+                                <li>Page Image Upload<div class="rounded">
+                                    <input type="checkbox" value="None" id="roundedTwo" name="check" />
+                                    <label for="roundedTwo"></label>
+                                </div>
+                                </li>
+                                <li>Position
+                                    <select>
+                                        <option>Top</option>
+                                        <option>Center</option>
+                                        <option>Bottom</option>
+                                    </select>
+                                </li>
+                                <li>Span in Percentage<input type="number" name="points" min="10" max="100" step="10" value="10"></li>
+                                <li>Custom HTML<div class="rounded">
+                                    <input type="checkbox" value="None" id="roundedThree" name="check" />
+                                    <label for="roundedThree"></label>
+                                </div>
+                                </li>
+                                <li>Images for HTML<div class="rounded">
+                                    <input type="checkbox" value="None" id="roundedFour" name="check" />
+                                    <label for="roundedFour"></label>
+                                </div>
+                                </li>
+                                <li><a href="#" class="add">+Add</a></li>
+                                <li>Primary Button Content</li>
+                                <li><input type="text" placeholder="Get Started" class="get-started"></li>
+                              </ul>
+                            </li>
+                            <li class="dropdown">
+                              <input type="checkbox" />
+                              <a href="#" data-toggle="dropdown">Photo & Frame Frame Frame</a>
+                            </li>
+                            <li class="dropdown">
+                              <input type="checkbox" />
+                              <a href="#" data-toggle="dropdown">Share</a>
+                            </li>
+                            <li class="dropdown">
+                              <input type="checkbox" />
+                              <a href="#" data-toggle="dropdown">Reward</a>
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                	<div class="campaign-name">
+                    	<h4>CAMPAIGN NAME<a href="#" class="save">SAVE</a></h4>
+                        <div class="campaing-main">
+                        	<div class="select-phone">
+                            	<a href="#" class="iphone">iPhone</a>
+                                <a href="#" class="android">Android</a>
+                            </div>
+                        	<img src="images/mobile.png">
+                            <div class="mobile-inner primary-screen">
+                            	<div class="logo">
+                                	<img src="images/logo.png" alt="">
+                                </div>
+                                <div class="font">
+                                	<p>Helvetica</p>
+                                </div>
+                                <div class="primary-button">Primary Button</div>
+                                <div class="secondary-button">Secondary Button</div>
+                            </div>
+                            <div class="mobile-inner get-started-screen">
+                                <div class="logo">
+                                    <img src="images/logo.png" alt="">
+                                </div>
+                                <div class="image-and-html">
+                                    
+                                </div>
+                                <div class="get-started-button">Get Started</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Choose color</h4>
+        </div>
+        <div class="modal-body">
+          <p>       <div id="picker"></div></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal End -->
+  <script type="text/javascript">
+      $('.global-settings').click(function() {
+      $('.primary-screen').css('display','block');
+      $('.get-started-screen').css('display','none');
+    });
+       $('.intro').click(function() {
+      $('.get-started-screen').css('display','block');
+      $('.primary-screen').css('display','none');
+    });
+  </script>
+</body>
+</html>
