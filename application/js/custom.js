@@ -1,8 +1,6 @@
 $(document).ready(function()
 {
-
 	//$('.reward-screen-input').css("display","none");
-
 	$(".blah").attr('src','');
 	$("#blah2").attr('src','');
 	var filename;
